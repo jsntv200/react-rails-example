@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "key-spacing": [2, {"mode": "minimum"}],
+    "react-in-jsx-scope": false
+  }
+}

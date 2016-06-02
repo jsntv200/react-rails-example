@@ -14,27 +14,25 @@ class RecordForm extends React.Component {
 
   handleChange(event) {
     this.setState({
-      [`${event.target.name}`]: event.target.value
+      [`${event.target.name}`]: event.target.value,
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
-    let record = this.state;
+    const record = this.state;
 
-    $.post('', { record }, onSuccess.bind(this), 'JSON');
-
-    function onSuccess(data) {
+    $.post('', { record }, data => {
       this.props.handleNewRecord(data);
       this.setState(this.props);
-    }
+    }, 'JSON');
   }
 
   valid() {
-    return this.state.title
-        && this.state.date
-        && this.state.amount;
+    return this.state.titl &&
+           this.state.date &&
+           this.state.amount;
   }
 
   render() {
@@ -79,9 +77,10 @@ class RecordForm extends React.Component {
 }
 
 RecordForm.propTypes = {
-  date:   React.PropTypes.string,
-  title:  React.PropTypes.string,
-  amount: React.PropTypes.string,
+  date:            React.PropTypes.string,
+  title:           React.PropTypes.string,
+  amount:          React.PropTypes.string,
+  handleNewRecord: React.PropTypes.function,
 };
 
 RecordForm.defaultProps = {
