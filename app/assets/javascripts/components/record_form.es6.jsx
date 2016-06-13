@@ -30,7 +30,7 @@ class RecordForm extends React.Component {
   }
 
   valid() {
-    return this.state.titl &&
+    return this.state.title &&
            this.state.date &&
            this.state.amount;
   }
@@ -80,7 +80,7 @@ RecordForm.propTypes = {
   date:            React.PropTypes.string,
   title:           React.PropTypes.string,
   amount:          React.PropTypes.string,
-  handleNewRecord: React.PropTypes.function,
+  handleNewRecord: React.PropTypes.func,
 };
 
 RecordForm.defaultProps = {
