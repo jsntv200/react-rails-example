@@ -1,3 +1,3 @@
-const amountFormat = (amount) => {
+export default function(amount) {
   return `$ ${Number(amount).toLocaleString()}`;
 }

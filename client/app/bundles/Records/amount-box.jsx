@@ -1,4 +1,13 @@
+import React from 'react';
+import amountFormat from '../Utils/amount-format';
+
 class AmountBox extends React.Component {
+  static propTypes = {
+    type:   React.PropTypes.string,
+    text:   React.PropTypes.string,
+    amount: React.PropTypes.number,
+  };
+
   render() {
     return (
       <div className="col-md-4">
@@ -15,8 +24,4 @@ class AmountBox extends React.Component {
   }
 }
 
-AmountBox.propTypes = {
-  type:   React.PropTypes.string,
-  text:   React.PropTypes.string,
-  amount: React.PropTypes.number,
-};
+export default AmountBox;

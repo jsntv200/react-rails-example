@@ -39,3 +39,5 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'therubyracer', platforms: :ruby

@@ -1,4 +1,13 @@
+import React from 'react';
+import AmountBox from './amount-box';
+import Record from './record';
+import RecordForm from './record-form';
+
 class Records extends React.Component {
+  static propTypes = {
+    data: React.PropTypes.array,
+  };
+
   constructor(props) {
     super(props);
 
@@ -59,7 +68,7 @@ class Records extends React.Component {
     function createElementRecord(record) {
       return React.createElement(Record, {
         key: record.id,
-        handleEditRecord:   this.updateRecord,
+        handleEditRecord: this.updateRecord,
         handleDeleteRecord: this.deleteRecord,
         ...record
       });
@@ -93,6 +102,4 @@ class Records extends React.Component {
   }
 }
 
-Records.propTypes = {
-  data: React.PropTypes.array,
-};
+export default Records;

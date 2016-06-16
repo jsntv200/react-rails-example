@@ -1,4 +1,19 @@
+import React from 'react';
+
 class RecordForm extends React.Component {
+  static propTypes = {
+    date:            React.PropTypes.string,
+    title:           React.PropTypes.string,
+    amount:          React.PropTypes.string,
+    handleNewRecord: React.PropTypes.func,
+  };
+
+  static defaultProps = {
+    date:   '',
+    title:  '',
+    amount: '',
+  };
+
   constructor(props) {
     super(props);
 
@@ -76,16 +91,4 @@ class RecordForm extends React.Component {
   }
 }
 
-RecordForm.propTypes = {
-  date:            React.PropTypes.string,
-  title:           React.PropTypes.string,
-  amount:          React.PropTypes.string,
-  handleNewRecord: React.PropTypes.func,
-};
-
-RecordForm.defaultProps = {
-  date:   '',
-  title:  '',
-  amount: '',
-};
-
+export default RecordForm;

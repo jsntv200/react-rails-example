@@ -1,4 +1,15 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import amountFormat from '../Utils/amount-format';
+
 class Record extends React.Component {
+  static propTypes = {
+    id:     React.PropTypes.number,
+    date:   React.PropTypes.string,
+    title:  React.PropTypes.string,
+    amount: React.PropTypes.number,
+  };
+
   constructor(props) {
     super(props);
 
@@ -115,9 +126,4 @@ class Record extends React.Component {
   }
 }
 
-Record.propTypes = {
-  id:     React.PropTypes.number,
-  date:   React.PropTypes.string,
-  title:  React.PropTypes.string,
-  amount: React.PropTypes.number,
-};
+export default Record;
